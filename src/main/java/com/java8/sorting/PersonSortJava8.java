@@ -50,8 +50,6 @@ class Person{
 		return "Person [=" +lastName+" - "+ firstName + "="   + "" + email + "]";
 	}
 	
-	
-	
 }
 
 public class PersonSortJava8{
