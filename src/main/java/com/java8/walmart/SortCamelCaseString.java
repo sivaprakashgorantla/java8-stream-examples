@@ -9,6 +9,7 @@ public class SortCamelCaseString {
 		String input = "gEeSksfOraEEkS";
 		//output =      aEefgkEkrEOsS
 
+		
 		// Separate and sort lowercase and uppercase characters
 		List<Character> lowercase = input.chars().mapToObj(c -> (char) c).filter(Character::isLowerCase).sorted()
 				.collect(Collectors.toList());
@@ -17,7 +18,9 @@ public class SortCamelCaseString {
 		List<Character> uppercase = input.chars().mapToObj(c -> (char) c).filter(Character::isUpperCase).sorted()
 				.collect(Collectors.toList());
 		System.out.println("uppercase : "+uppercase);
-		
+
+		System.out.println("input : "+input);
+
 		// Merge sorted lowercase and uppercase characters
 		StringBuilder result = new StringBuilder();
 		

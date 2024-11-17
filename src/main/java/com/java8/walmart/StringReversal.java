@@ -5,6 +5,10 @@ import java.util.stream.IntStream;
 
 public class StringReversal {
 	public static String reverseString(String input) {
+		
+		IntStream.rangeClosed(0, input.length()).mapToObj( c -> input.charAt(input.length() -1))
+		.map(String::valueOf).collect(Collectors.joining());
+		
 		return IntStream.rangeClosed(1, input.length()).mapToObj(i -> input.charAt(input.length() - i))
 				.map(String::valueOf).collect(Collectors.joining());
 	}

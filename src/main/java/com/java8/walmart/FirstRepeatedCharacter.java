@@ -12,16 +12,10 @@ public class FirstRepeatedCharacter {
 
 	public static void main(String[] args) {
 		String s = "cbapxaleb";
-
-		
-		
 		HashSet set = new HashSet<>();
-		
-		
 		// Find the first repeated character
 		Optional<Character> firstRepeated = IntStream.range(0, s.length()).mapToObj(s::charAt) // Convert each index to
-																								// a character
-				.filter(c -> !set.add(c)) // Only allow adding new characters to the Set
+				.filter(c -> !set.add(c)) // Only allow adding new characters to the Set // a character
 				.findFirst(); // Find the first character that cannot be added
 
 		
