@@ -10,7 +10,8 @@ public class PrimeNumberInArrayList {
 
 		list.stream().filter(PrimeNumberInArrayList::isPrime).collect(Collectors.toList()).forEach(System.out::println);
 		IntStream.rangeClosed(0, 1000).filter(PrimeNumberInArrayList::isPrime).boxed().collect(Collectors.toList()).forEach(System.out::println);
-		
+		System.out.println("-----------------");
+		IntStream.range(0, 1000).filter(PrimeNumberInArrayList::isPrime).boxed().collect(Collectors.toList()).forEach(System.out::println);
 
 	}
 
