@@ -15,9 +15,9 @@ public class MapEmpSort {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		List<Employee> employees = Arrays.asList(new Employee(1, "Aravind", 50000, "MALE"),
-				new Employee(2, "Rani", 60000, "FIMALE"), new Employee(3, "Vennella", 55000, "FIMALE"),
-				new Employee(4, "Suresh", 45000, "MALE"));
+		List<Employee> employees = Arrays.asList(new Employee(1, "Aravind", 50000, "MALE",34),
+				new Employee(2, "Rani", 60000, "FIMALE",22), new Employee(3, "Vennella", 55000, "FIMALE",54),
+				new Employee(4, "Suresh", 45000, "MALE",35));
 
 		employees.stream().collect(Collectors.toMap(Employee::getName, emp -> emp))
 				.forEach((name, emp) -> System.out.println(name + " : " + emp));
@@ -26,10 +26,10 @@ public class MapEmpSort {
 
 		// Create a Map with employee names as the key
 		Map<String, Employee> employeeMap = new HashMap<>();
-		employeeMap.put("John", new Employee(1, "Aravind", 50000, "MALE"));
-		employeeMap.put("Jane", new Employee(2, "Rani", 60000, "FIMALE"));
-		employeeMap.put("Jake", new Employee(3, "Vennella", 55000, "FIMALE"));
-		employeeMap.put("Jill", new Employee(4, "Suresh", 45000, "MALE"));
+		employeeMap.put("John", new Employee(1, "Aravind", 50000, "MALE",22));
+		employeeMap.put("Jane", new Employee(2, "Rani", 60000, "FIMALE",34));
+		employeeMap.put("Jake", new Employee(3, "Vennella", 55000, "FIMALE",42));
+		employeeMap.put("Jill", new Employee(4, "Suresh", 45000, "MALE",54));
 
 		System.out.println("-------------------------------------key-------------");
 
@@ -46,10 +46,10 @@ public class MapEmpSort {
 
 		System.out.println("Sort my emp name ----------------------------");
 		Map<Integer, Employee> employeeMapName = new HashMap<>();
-		employeeMapName.put(1, new Employee(1, "Aravind", 50000, "MALE"));
-		employeeMapName.put(2, new Employee(2, "Rani", 60000, "FIMALE"));
-		employeeMapName.put(3, new Employee(3, "Vennella", 55000, "FIMALE"));
-		employeeMapName.put(4, new Employee(4, "Suresh", 45000, "MALE"));
+		employeeMapName.put(1, new Employee(1, "Aravind", 50000, "MALE",34));
+		employeeMapName.put(2, new Employee(2, "Rani", 60000, "FIMALE",54));
+		employeeMapName.put(3, new Employee(3, "Vennella", 55000, "FIMALE",24));
+		employeeMapName.put(4, new Employee(4, "Suresh", 45000, "MALE",43));
 
 		employeeMapName.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.comparing(Employee::getName)))
 				.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (m1, m2) -> m1, LinkedHashMap::new))
